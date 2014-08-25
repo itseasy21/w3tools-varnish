@@ -16,7 +16,7 @@ RESET='\033[0m'
 clear
 
 echo -e "$GREEN----------------------------------------$RESET"
-echo -e " Starting the W3TooLS Varnish installer"
+echo -e "    $RED W3TooLS Varnish installer $RESET"
 echo -e "            Version 0.2             "
 echo -e "     http://www.w3tool.blogspot.in/  "
 echo -e "$GREEN----------------------------------------$RESET"
@@ -26,11 +26,11 @@ cd /root
 yum install vim wget lynx sed rpm -y
 
 #--CPanel check
-echo -ne "Searchinng for cPanel .."
+echo -ne "Searching for cPanel .."
 if [ -e  "/usr/local/cpanel/version" ]; then
 	echo -e "[ $GREEN cPanel Found $RESET ]"
 else
-	echo -e "[ $RED cPanel Not Found $RESET ]"
+	echo -e "[ $RED cPanel Not Found.\n Exiting Install. $RESET ]"
 	exit
 fi
 
@@ -80,13 +80,14 @@ sed -i 's#port = "80"#port = "82"#g' ./default.vcl
 chkconfig varnish on
 service varnish start
 
-echo -e "$GREEN----------------------------------------$RESET"
-echo -e "$GREEN Varnish Cache Installation Complete  $RESET"
-echo -e "If varnish failed to install or you faced any bugs feel free to post them with install log at http://bit.ly/w3tools-varnish-issues"
+echo -e "$GREEN---------------------------------------------------$RESET"
+echo -e "$GREEN      Varnish Cache Installation Complete       $RESET"
+echo -e ""
+echo -e "If varnish failed to install or you faced any bugs feel free to post them with install log at $GREEN http://bit.ly/w3tools-varnish-issues $RESET"
 echo -e ""
 echo -e "You can monitor varnish cache through this monitoring tool:$GREEN varnishstat $RESET"
 echo -e ""
 echo -e "Thanks for using our Varnish Installer for CPanel"
-echo -e "For more stay tuned at our blog : http://www.w3tool.blogspot.in/"
-echo -e "$GREEN----------------------------------------$RESET"
+echo -e "For more stay tuned at our blog : $GREEN http://www.w3tool.blogspot.in/ $RESET"
+echo -e "$GREEN---------------------------------------------------$RESET"
 
