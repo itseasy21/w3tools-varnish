@@ -1,7 +1,7 @@
 w3tools-varnish
 ===============
 
-####Varnish Cache Inegration in cPanel
+####Varnish Cache Integration in cPanel
 
 Varnish Cache is a web application accelerator also known as a caching HTTP reverse proxy. You install it in front of any server that speaks HTTP and configure it to cache the contents.
 
