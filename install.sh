@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# This script installs VARNISH Cache along side Apache on cPanel servers. The default setup
-# is to have varnish serve static files (html, png, jpg, etc) and pass PHP requests
-# over to Apache. This script installs VARNISH, changes the Apache port to 82, writes
+# This script installs VARNISH Cache along side Apache on cPanel servers. 
+#This script installs VARNISH, changes the Apache port to 82, writes
 # some config files, starts VARNISH, and terminates.
 
 ### Made by Shubham Mathur (itseasy21)
@@ -16,8 +15,8 @@ RESET='\033[0m'
 clear
 
 echo -e "$GREEN----------------------------------------$RESET"
-echo -e "    $RED W3TooLS Varnish installer $RESET"
-echo -e "            Version 0.2             "
+echo -e "    $RED W3TooLS Varnish Installer $RESET"
+echo -e "              Version 0.2             "
 echo -e "     http://www.w3tool.blogspot.in/  "
 echo -e "$GREEN----------------------------------------$RESET"
 
@@ -56,7 +55,7 @@ fi
 yum remove varnish -y
 
 
-#--Change port Apache listens on to 82
+#--Change Apache to Listen on Port 82
 cd /var/cpanel
 sed -i 's#apache_port=0.0.0.0:80#apache_port=0.0.0.0:82#g' ./cpanel.config
 /usr/local/cpanel/whostmgr/bin/whostmgr2 -updatetweaksettings
