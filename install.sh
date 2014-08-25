@@ -7,9 +7,10 @@
 
 ### Made by Shubham Mathur (itseasy21)
 
-echo ''
+echo '----------------------------------------'
 echo " Starting the W3TooLS Varnish installer"
-echo ''
+echo "--------------By itseasy21--------------"
+echo '-----------------------------------------'
 
 #--Adding Required FUnctions
 cd /root
@@ -32,7 +33,7 @@ cd /etc/sysconfig/
 sed -i 's#VARNISH_LISTEN_PORT=6081#VARNISH_LISTEN_PORT=80#g' ./varnish
 cd /etc/varnish/
 ip=$( lynx --dump cpanel.net/showip.cgi ) 2>&1
-sed -i 's#host = "127.0.0.1"#host = "$ip"#g' ./default.vcl
+sed -i 's#host = "127.0.0.1"#host = "'$ip'"#g' ./default.vcl
 sed -i 's#port = "80"#port = "82"#g' ./default.vcl
 
 #-- Starting Varnish
