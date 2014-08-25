@@ -32,7 +32,7 @@ yum install varnish -y
 cd /etc/sysconfig/
 sed -i 's#VARNISH_LISTEN_PORT=6081#VARNISH_LISTEN_PORT=80#g' ./varnish
 cd /etc/varnish/
-ip=$( lynx --dump cpanel.net/showip.cgi ) 2>&1
+ip=$(( lynx --dump cpanel.net/showip.cgi ) 2>&1 | sed "s/ //g")
 #sed -i 's#host = "127.0.0.1"#host = "$ip"#g' ./default.vcl
 sed -i "s#host = \"127.0.0.1\"#host = \"$ip\"#g" ./default.vcl
 sed -i 's#port = "80"#port = "82"#g' ./default.vcl
