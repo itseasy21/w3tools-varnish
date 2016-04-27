@@ -62,9 +62,10 @@ sed -i 's#apache_port=0.0.0.0:80#apache_port=0.0.0.0:82#g' ./cpanel.config
 /scripts/rebuildhttpdconf
 service httpd restart
 
-#--Install Varnish 3
+#--Install Varnish 4
 cd /root
-rpm --nosignature -i http://repo.varnish-cache.org/redhat/varnish-3.0/el6/noarch/varnish-release/varnish-release-3.0-1.el6.noarch.rpm
+#rpm --nosignature -i http://repo.varnish-cache.org/redhat/varnish-3.0/el6/noarch/varnish-release/varnish-release-3.0-1.el6.noarch.rpm
+rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.1.el6.rpm
 yum install varnish -y
 
 #-- Config Varnish
