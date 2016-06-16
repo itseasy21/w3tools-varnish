@@ -28,7 +28,7 @@ varnishd -C -f /etc/varnish/default.vcl
 ```
 To apply the setting, restart Varnish
 ````bash
-service Varnish restart
+service varnish restart
 ```
 
 Varnish Cache Proudly Presented by http://www.w3tool.blogspot.in/
