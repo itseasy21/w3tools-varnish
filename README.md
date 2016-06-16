@@ -31,4 +31,13 @@ To apply the setting, restart Varnish
 service varnish restart
 ```
 
+####UnInstall:
+
+```bash
+$> wget "https://raw.githubusercontent.com/itseasy21/w3tools-varnish/master/uninstall.sh" -O /root/varnish-uninstall.sh
+$> cd /root
+$> chmod +x varnish-uninstall.sh
+$> ./varnish-uninstall.sh
+``````
+
 Varnish Cache Proudly Presented by http://www.w3tool.blogspot.in/
